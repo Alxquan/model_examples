@@ -1,2 +1,26 @@
-<h1>People#show</h1>
-<p>Find me in app/views/people/show.html.erb</p>
+<h1>Info for person: <%=@person.name %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Alive</th>
+      <th>Hair Color</th>
+      <th>Eye Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <%= @person.age %> </td>
+      <td> <%= @person.gender %> </td>
+      <td> <%= @person.alive %> </td>
+      <td> <%= @person.hair_color %> </td>
+      <td> <%= @person.eye_color %> </td>
+      </tr>
+  </tbody>
+
+</table>
+
+<%= link_to 'All Peoples', people_path %>
+<%= link_to 'Edit user', edit_person_path(@person) %>
+<%= link_to 'Delete person', person_path(@person), method: :delete %>
